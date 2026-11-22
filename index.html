@@ -26,15 +26,22 @@
         autocomplete="off"
         required
       >
+      <label class="visually-hidden" for="task-category">Folder</label>
+      <select id="task-category" name="category">
+        <option value="groceries">Grocery items</option>
+        <option value="semester">Studies</option>
+        <option value="routine">Daily routine</option>
+        <option value="others">Others</option>
+      </select>
       <button class="add-button" type="submit">Add</button>
     </form>
 
     <div class="summary">
       <span id="task-count">0 tasks</span>
-      <span>Choose ✓ or ✗ to mark a task</span>
+      <span>Choose completed or not completed</span>
     </div>
     <p id="message" class="message" role="status" aria-live="polite"></p>
-    <ul id="task-list" aria-label="Todo tasks"></ul>
+    <div id="task-folders" aria-label="Todo folders"></div>
   </main>
 </body>
 </html>

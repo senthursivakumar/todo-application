@@ -2,7 +2,7 @@
   color-scheme: light;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   color: #202735;
-  background: #f3f5f9;
+  background: #fce4ec;
 }
 
 * {
@@ -16,18 +16,20 @@ body {
 }
 
 .todo-app {
-  width: min(100%, 560px);
+  width: min(50vw, 900px);
   margin: 0 auto;
   padding: 32px;
   border: 1px solid #e5e8ef;
   border-radius: 18px;
-  background: #fff;
+  background: #fff0f6;
   box-shadow: 0 12px 40px rgb(35 48 73 / 8%);
 }
 
 h1 {
   margin: 0;
   font-size: 1.8rem;
+  font-style: italic;
+  color: #218838;
 }
 
 .subtitle {
@@ -37,6 +39,7 @@ h1 {
 
 #todo-form {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -52,6 +55,14 @@ h1 {
 #new-task:focus {
   outline: 3px solid #dce8ff;
   border-color: #477be5;
+}
+
+#task-category {
+  padding: 12px;
+  border: 1px solid #ccd3df;
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
 }
 
 button {
@@ -87,12 +98,21 @@ input:focus-visible {
   font-size: 0.9rem;
 }
 
-#task-list {
+.task-list {
   display: grid;
   gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.task-folder {
+  margin-top: 20px;
+}
+
+.task-folder h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
 }
 
 .task {
@@ -110,7 +130,7 @@ input:focus-visible {
   overflow-wrap: anywhere;
 }
 
-.task[data-status="correct"] .task-text {
+.task[data-status="completed"] .task-text {
   color: #738071;
   text-decoration: line-through;
 }
@@ -122,12 +142,12 @@ input:focus-visible {
   white-space: nowrap;
 }
 
-.status-button[data-status="correct"] {
+.status-button[data-status="completed"] {
   color: #167447;
   background: #e8f6ee;
 }
 
-.status-button[data-status="wrong"] {
+.status-button[data-status="not_completed"] {
   color: #b42332;
   background: #fff0f0;
 }
@@ -163,6 +183,12 @@ input:focus-visible {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+@media (max-width: 640px) {
+  .todo-app {
+    width: 100%;
+  }
 }
 
 @media (max-width: 440px) {
