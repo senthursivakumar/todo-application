@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simple todo list to keep track of your tasks.">
+  <title>My Todo List</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <main class="todo-app">
+    <header>
+      <h1>My Todo List</h1>
+      <p class="subtitle">Keep track of what you need to do.</p>
+    </header>
+
+    <form id="todo-form">
+      <label class="visually-hidden" for="new-task">New task</label>
+      <input
+        id="new-task"
+        name="task"
+        type="text"
+        maxlength="200"
+        placeholder="Add a task..."
+        autocomplete="off"
+        required
+      >
+      <button class="add-button" type="submit">Add</button>
+    </form>
+
+    <div class="summary">
+      <span id="task-count">0 tasks</span>
+      <span>Choose ✓ or ✗ to mark a task</span>
+    </div>
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+    <ul id="task-list" aria-label="Todo tasks"></ul>
+  </main>
+</body>
+</html>

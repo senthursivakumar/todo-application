@@ -1,0 +1,188 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #202735;
+  background: #f3f5f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 48px 16px;
+}
+
+.todo-app {
+  width: min(100%, 560px);
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid #e5e8ef;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 40px rgb(35 48 73 / 8%);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  margin: 8px 0 24px;
+  color: #687386;
+}
+
+#todo-form {
+  display: flex;
+  gap: 10px;
+}
+
+#new-task {
+  min-width: 0;
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #ccd3df;
+  border-radius: 10px;
+  font: inherit;
+}
+
+#new-task:focus {
+  outline: 3px solid #dce8ff;
+  border-color: #477be5;
+}
+
+button {
+  border: 0;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #dce8ff;
+  outline-offset: 2px;
+}
+
+.add-button {
+  padding: 0 18px;
+  color: #fff;
+  background: #356fe0;
+}
+
+.add-button:hover {
+  background: #285dc4;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 24px 0 10px;
+  color: #687386;
+  font-size: 0.9rem;
+}
+
+#task-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #e5e8ef;
+  border-radius: 11px;
+}
+
+.task-text {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.task[data-status="correct"] .task-text {
+  color: #738071;
+  text-decoration: line-through;
+}
+
+.status-button,
+.delete-button {
+  padding: 7px 10px;
+  background: #f0f3f8;
+  white-space: nowrap;
+}
+
+.status-button[data-status="correct"] {
+  color: #167447;
+  background: #e8f6ee;
+}
+
+.status-button[data-status="wrong"] {
+  color: #b42332;
+  background: #fff0f0;
+}
+
+.delete-button {
+  color: #687386;
+}
+
+.delete-button:hover {
+  color: #b42332;
+  background: #fff0f0;
+}
+
+.empty-state {
+  padding: 28px 12px;
+  color: #687386;
+  text-align: center;
+}
+
+.message {
+  min-height: 1.25em;
+  margin: 0 0 8px;
+  color: #b42332;
+  font-size: 0.9rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 440px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .todo-app {
+    padding: 22px 16px;
+  }
+
+  .task {
+    flex-wrap: wrap;
+  }
+
+  .task-text {
+    flex-basis: calc(100% - 32px);
+  }
+
+  .status-button {
+    margin-left: 32px;
+  }
+}
